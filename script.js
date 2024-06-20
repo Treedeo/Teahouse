@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             if (button.id === 'clear') {
                 pinCode = '';
+                pinCodeDisplay.classList.remove('error');
             } else if (button.id !== 'toggle-visibility') {
                 pinCode += button.textContent;
             }
@@ -21,9 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (pinCode === '250883') {
                     window.location.href = 'admin.html'; // Переход на страницу администратора
                 } else {
-                    alert('Неверный PIN-код');
+                    pinCodeDisplay.classList.add('error');
                     pinCode = '';
-                    pinCodeDisplay.textContent = '';
+                    setTimeout(() => {
+                        pinCodeDisplay.classList.remove('error');
+                        pinCodeDisplay.textContent = '';
+                    }, 1000);
                 }
             }
         });
