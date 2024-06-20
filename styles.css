@@ -1,1 +1,125 @@
-
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden; /* Предотвращение увеличения экрана на мобильных устройствах */
+}
+h1 {
+    color: #333;
+    text-align: center;
+}
+#version {
+    font-size: 12px;
+    color: gray;
+    margin-top: 20px;
+}
+.pin-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 200px;
+    margin: 20px auto;
+}
+.pin-pad button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pin-pad button:hover {
+    background-color: #f0f0f0;
+}
+.pin-pad button:active {
+    background-color: #000;
+    color: #fff;
+}
+#pin-code {
+    font-size: 24px;
+    margin: 20px 0;
+    letter-spacing: 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    width: 200px; /* Фиксированная ширина */
+    height: 40px; /* Фиксированная высота */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px; /* Вертикальное выравнивание текста */
+}
+#admin-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+#admin-button:hover {
+    background-color: #f0f0f0;
+}
+#admin-button:active {
+    background-color: #000;
+    color: #fff;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+}
+.modal input[type="text"], .modal input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.modal input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.modal input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+}
+.pin-display.error {
+    color: red;
+    border-color: red;
+}
