@@ -58,10 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    window.onclick = function(event) {
+    adminLoginModal.addEventListener('click', (event) => {
         if (event.target === adminLoginModal) {
             adminLoginModal.style.display = 'none';
             document.body.style.overflow = 'auto';  // Разрешение прокрутки
         }
-    };
+    });
+
+    // Предотвращение закрытия окна при клике на его содержимое
+    document.querySelector('.modal-content').addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
 });
