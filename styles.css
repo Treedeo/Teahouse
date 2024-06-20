@@ -107,16 +107,16 @@ h1 {
 .modal input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #000; /* Черный фон */
     border: none;
     color: white;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s; /* Добавление перехода для изменения цвета */
+    transition: background-color 0.3s, color 0.3s; /* Добавление перехода для изменения цвета */
 }
 .modal input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #333; /* Темно-серый при наведении */
 }
 .icon {
     width: 60px;
