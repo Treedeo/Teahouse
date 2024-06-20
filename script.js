@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             if (button.id === 'clear') {
                 pinCode = '';
-            } else if (button.id === 'toggle-visibility') {
-                isPinVisible = !isPinVisible;
-                pinCodeDisplay.textContent = isPinVisible ? pinCode : '*'.repeat(pinCode.length);
-            } else {
+            } else if (button.id !== 'toggle-visibility') {
                 pinCode += button.textContent;
             }
             pinCodeDisplay.textContent = isPinVisible ? pinCode : '*'.repeat(pinCode.length);
@@ -30,6 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    });
+
+    toggleVisibilityButton.addEventListener('mousedown', () => {
+        isPinVisible = true;
+        pinCodeDisplay.textContent = pinCode;
+    });
+
+    toggleVisibilityButton.addEventListener('mouseup', () => {
+        isPinVisible = false;
+        pinCodeDisplay.textContent = '*'.repeat(pinCode.length);
     });
 
     adminButton.addEventListener('click', () => {
