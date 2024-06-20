@@ -11,7 +11,7 @@ h1 {
 #version {
     font-size: 12px;
     color: gray;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .pin-pad {
     display: grid;
@@ -24,18 +24,24 @@ h1 {
     width: 60px;
     height: 60px;
     font-size: 24px;
-    border: none;
-    background-color: #007bff;
-    color: white;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 .pin-pad button:hover {
-    background-color: #0056b3;
+    background-color: #f0f0f0;
+}
+.pin-pad button:active {
+    background-color: #000;
+    color: #fff;
 }
 #pin-code {
     font-size: 24px;
     margin: 20px 0;
+    letter-spacing: 5px;
 }
 #admin-button {
     margin-top: 20px;
