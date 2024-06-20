@@ -23,11 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = 'admin.html'; // Переход на страницу администратора
                 } else {
                     pinCodeDisplay.classList.add('error');
-                    pinCode = '';
-                    setTimeout(() => {
-                        pinCodeDisplay.classList.remove('error');
-                        pinCodeDisplay.textContent = '';
-                    }, 1000);
                 }
             }
         });
