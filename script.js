@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.onclick = function(event) {
-        if (event.target == adminLoginModal) {
+        if (event.target === adminLoginModal) {
             adminLoginModal.style.display = 'none';
             document.body.style.overflow = 'auto';  // Разрешение прокрутки
         }
