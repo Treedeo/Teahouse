@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скидка клиента</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Скидка клиента</h1>
+    <div id="pin-code" class="pin-display"></div>
+    <div class="pin-pad">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+        <button id="clear">C</button>
+        <button id="toggle-visibility">
+            <img src="eye-icon.png" alt="eye" class="icon">
+        </button>
+    </div>
+    <button id="admin-button">ADMIN</button>
+    <div id="version">V0006</div> <!-- Обновите значение версии при каждом изменении кода -->
 
+    <div id="admin-login-modal" class="modal">
+        <div class="modal-content">
+            <form id="admin-login-form">
+                <label for="admin-login">NAME ADMIN:</label>
+                <input type="text" id="admin-login" name="admin-login" placeholder="">
+                <input type="submit" value="Войти">
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
