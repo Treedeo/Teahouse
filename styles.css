@@ -106,3 +106,6 @@ h1 {
     width: 24px;
     height: 24px;
 }
+.pin-display.error {
+    color: red;
+}
