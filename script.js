@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const adminButton = document.getElementById('admin-button');
     const adminLoginModal = document.getElementById('admin-login-modal');
     const adminLoginForm = document.getElementById('admin-login-form');
+    const adminSubmitButton = adminLoginForm.querySelector('input[type="submit"]');
     const toggleVisibilityButton = document.getElementById('toggle-visibility');
     let pinCode = '';
     let isAdminLogin = false;
@@ -47,7 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'auto';  // Разрешение прокрутки
             window.location.href = 'admin.html'; // Переход на страницу администратора
         } else {
-            adminLoginForm.querySelector('input[type="submit"]').style.backgroundColor = 'red';
+            adminSubmitButton.style.backgroundColor = 'red';
+            adminSubmitButton.style.color = 'white';
+            setTimeout(() => {
+                adminSubmitButton.style.backgroundColor = 'black';
+                adminSubmitButton.style.color = 'white';
+                adminLoginForm.reset();
+            }, 1500);
         }
     });
 
@@ -56,5 +63,5 @@ document.addEventListener('DOMContentLoaded', () => {
             adminLoginModal.style.display = 'none';
             document.body.style.overflow = 'auto';  // Разрешение прокрутки
         }
-    }
+    };
 });
