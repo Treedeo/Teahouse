@@ -47,14 +47,19 @@ h1 {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #28a745;
-    border: none;
-    color: white;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 #admin-button:hover {
-    background-color: #218838;
+    background-color: #f0f0f0;
+}
+#admin-button:active {
+    background-color: #000;
+    color: #fff;
 }
 .modal {
     display: none;
@@ -96,4 +101,8 @@ h1 {
 }
 .modal input[type="submit"]:hover {
     background-color: #0056b3;
+}
+.icon {
+    width: 24px;
+    height: 24px;
 }
