@@ -29,13 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     toggleVisibilityButton.addEventListener('mousedown', () => {
-        isPinVisible = true;
-        pinCodeDisplay.textContent = pinCode;
-    });
-
-    toggleVisibilityButton.addEventListener('mouseup', () => {
-        isPinVisible = false;
-        pinCodeDisplay.textContent = '*'.repeat(pinCode.length);
+        isPinVisible = !isPinVisible;
+        pinCodeDisplay.textContent = isPinVisible ? pinCode : '*'.repeat(pinCode.length);
     });
 
     adminButton.addEventListener('click', () => {
@@ -46,14 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     adminLoginForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const login = document.getElementById('admin-login').value;
-        if (login === 'ASLAN' || login === '') {  // Возможность пустого имени
+        const password = document.getElementById('admin-password').value;
+        if (login === 'ASLAN' && password === '250883') {
             adminLoginModal.style.display = 'none';
             document.body.style.overflow = 'auto';  // Разрешение прокрутки
-            pinCode = '';
-            pinCodeDisplay.textContent = '';
-            isAdminLogin = true;
+            window.location.href = 'admin.html'; // Переход на страницу администратора
         } else {
-            alert('Неверное имя администратора');
+            adminLoginForm.querySelector('input[type="submit"]').style.backgroundColor = 'red';
         }
     });
 
